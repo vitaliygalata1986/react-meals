@@ -12,11 +12,11 @@ import './App.css';
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/react-food">
         <Header />
         <main className="container content">
           <>
-            <Routes basename="/react-food">
+            <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/about" element={<About />} />
               <Route path="/contacts" element={<Contact />} />
