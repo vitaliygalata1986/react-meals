@@ -36,4 +36,4 @@ function Search({ cb = Function.prototype }) {
   );
 }
 
-export { Search };
+export default Search;

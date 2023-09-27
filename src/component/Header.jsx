@@ -14,6 +14,9 @@ function Header() {
           <li>
             <Link to="/contacts">Contacts</Link>
           </li>
+          <li>
+            <Link to="/random">Random Product</Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -10,4 +10,4 @@ function MealList({ meals }) {
   );
 }
 
-export { MealList };
+export default MealList;

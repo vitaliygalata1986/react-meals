@@ -23,4 +23,4 @@ function CategoryItem({
   );
 }
 
-export { CategoryItem };
+export default CategoryItem;

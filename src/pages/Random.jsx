@@ -1,34 +1,33 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import Preloader from '../component/Preloader';
 import Button from '../component/Button';
-import { getMealById } from '../api';
+import Preloader from '../component/Preloader';
+import { getRandomSingleProduct } from '../api';
 
-function Recipe() {
-  const { id } = useParams();
-  const [recipe, setRecipe] = useState({});
+function Random() {
+  const [randomProduct, setRandomProduct] = useState({});
   useEffect(() => {
-    getMealById(id).then((data) => {
-      setRecipe(data.meals[0]);
+    getRandomSingleProduct().then((data) => {
+      setRandomProduct(data.meals[0]);
     });
-  }, [id]);
+  }, []);
   return (
     <>
-      {!recipe.idMeal ? (
+      {' '}
+      {!randomProduct.idMeal ? (
         <Preloader />
       ) : (
         <div className="recipe">
-          <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-          <h1>{recipe.strMeal}</h1>
+          <img src={randomProduct.strMealThumb} alt={randomProduct.strMeal} />
+          <h1>{randomProduct.strMeal}</h1>
           <h6>
-            <strong>Category:</strong> {recipe.strCategory}
+            <strong>Category:</strong> {randomProduct.strCategory}
           </h6>
-          {recipe.strArea ? (
+          {randomProduct.strArea ? (
             <h6>
-              <strong>Area:</strong> {recipe.strArea}
+              <strong>Area:</strong> {randomProduct.strArea}
             </h6>
           ) : null}
-          <p>{recipe.strInstructions}</p>
+          <p>{randomProduct.strInstructions}</p>
           <table className="centered">
             <thead>
               <tr>
@@ -37,14 +36,14 @@ function Recipe() {
               </tr>
             </thead>
             <tbody>
-              {Object.keys(recipe).map((key) => {
-                if (key.includes('Ingredient') && recipe[key]) {
+              {Object.keys(randomProduct).map((key) => {
+                if (key.includes('Ingredient') && randomProduct[key]) {
                   // и объект recipe с этим ключем Ingredient не пустой
                   // 13 - от какой позиции мы будем забирать числа
                   return (
                     <tr key={key}>
-                      <td>{recipe[key]}</td>
-                      <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                      <td>{randomProduct[key]}</td>
+                      <td>{randomProduct[`strMeasure${key.slice(13)}`]}</td>
                     </tr>
                   );
                 }
@@ -53,13 +52,12 @@ function Recipe() {
               })}
             </tbody>
           </table>
-
-          {recipe.strYoutube ? (
+          {randomProduct.strYoutube ? (
             <div className="row">
               <h5>Video Recipe</h5>
               <iframe
-                title={id}
-                src={`https://www.youtube.com/embed/${recipe.strYoutube.slice(
+                title={randomProduct.idMeal}
+                src={`https://www.youtube.com/embed/${randomProduct.strYoutube.slice(
                   -11
                 )}`}
                 allowFullScreen
@@ -73,4 +71,4 @@ function Recipe() {
   );
 }
 
-export default Recipe;
+export default Random;

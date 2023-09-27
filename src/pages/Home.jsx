@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getAllCategories } from '../api'; // импортируем метод всех категори
-import { Preloader } from '../component/Preloader';
+import Preloader from '../component/Preloader';
 import CategoryList from '../component/CategoryList';
-import { Search } from '../component/Search';
+import Search from '../component/Search';
+import { getAllCategories } from '../api'; // импортируем метод всех категори
+
 function Home() {
   const [catalog, setCatalog] = useState([]);
   const [filteredCatalog, setFilteredCatalog] = useState([]); // отфильтрованній каталог
@@ -15,13 +16,11 @@ function Home() {
 
   const handleSearch = (str) => {
     setFilteredCatalog(
-      //console.log(catalog)
       catalog.filter((item) =>
         item.strCategory.toLowerCase().includes(str.toLowerCase())
       )
     );
     push({
-      // будем передавать объект
       pathname,
       search: `?search=${str}`, // оба эти значения склеются воединно
     });

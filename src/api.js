@@ -19,4 +19,15 @@ const getFilteredCategory = async (catName) => {
   return await responce.json();
 };
 
-export { getMealById, getAllCategories, getFilteredCategory };
+// get random single product
+const getRandomSingleProduct = async () => {
+  const responce = await fetch(API_URL + 'random.php');
+  return await responce.json();
+};
+
+export {
+  getMealById,
+  getAllCategories,
+  getFilteredCategory,
+  getRandomSingleProduct,
+};

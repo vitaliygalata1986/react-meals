@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import MealList from '../component/MealList';
+import Preloader from '../component/Preloader';
+import Button from '../component/Button';
 import { getFilteredCategory } from '../api';
-import { MealList } from '../component/MealList';
-import { Preloader } from '../component/Preloader';
+
 function Category() {
   const name = useParams(); // будем вынимать неком имя
   const [meals, setMeals] = useState([]);
-  const navigate = useNavigate();
   useEffect(() => {
     getFilteredCategory(name).then((data) => {
       data.meals && setMeals(data.meals);
@@ -15,12 +16,10 @@ function Category() {
 
   return (
     <>
-      <button className="btn" onClick={() => navigate(-1)}>
-        Go Back
-      </button>
+      <Button />
       {!meals.length ? <Preloader /> : <MealList meals={meals} />}
     </>
   );
 }
 
-export { Category };
+export default Category;
