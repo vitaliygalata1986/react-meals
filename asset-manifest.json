@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-food-refactories-code/static/css/main.977f53d8.css",
+    "main.js": "/react-food-refactories-code/static/js/main.159cd833.js",
+    "index.html": "/react-food-refactories-code/index.html",
+    "main.977f53d8.css.map": "/react-food-refactories-code/static/css/main.977f53d8.css.map",
+    "main.159cd833.js.map": "/react-food-refactories-code/static/js/main.159cd833.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.977f53d8.css",
+    "static/js/main.159cd833.js"
+  ]
+}
