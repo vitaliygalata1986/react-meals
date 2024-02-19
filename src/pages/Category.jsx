@@ -1,23 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import MealList from '../component/MealList';
 import Preloader from '../component/Preloader';
 import Button from '../component/Button';
-import { getFilteredCategory } from '../api';
+import { getAllMealsByCatalog } from '../api';
+import { FoodContext } from '../context/context';
 
 function Category() {
-  const name = useParams(); // будем вынимать неком имя
-  const [meals, setMeals] = useState([]);
+  const name = useParams();
+  const { loading, setMealsByCatalog } = useContext(FoodContext);
+
+  const getMealsByCatalog = async () => {
+    try {
+      const dataFetch = await getAllMealsByCatalog(name);
+      setMealsByCatalog(dataFetch?.meals ?? []);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
-    getFilteredCategory(name).then((data) => {
-      data.meals && setMeals(data.meals);
-    });
+    getMealsByCatalog();
+    // eslint-disable-next-line
   }, [name]);
 
   return (
     <>
       <Button />
-      {!meals.length ? <Preloader /> : <MealList meals={meals} />}
+      {loading ? <Preloader /> : <MealList />}
     </>
   );
 }

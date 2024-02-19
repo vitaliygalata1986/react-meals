@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Meal(props) {
-  const { strMeal, strMealThumb, idMeal: id } = props;
-
+function Meal({ strMeal, strMealThumb, idMeal: id }) {
   return (
     <div className="card">
       <div className="card-image">
