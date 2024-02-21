@@ -1,5 +1,6 @@
 {
-  "name": "project-4",
+  "name": "react-meals",
+  "homepage": "https://vitaliygalata1986.github.io/react-meals/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

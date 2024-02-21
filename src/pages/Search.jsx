@@ -5,7 +5,7 @@ import Products from '../component/Products';
 import { useEffect } from 'react';
 
 function Search() {
-  const { findProductBySearch, searchMealByName } = useContext(FoodContext);
+  const { searchMealByName } = useContext(FoodContext);
   const [valueInputSearch, setValue] = useState('');
 
   const handleKey = (e) => {
@@ -16,6 +16,7 @@ function Search() {
 
   useEffect(() => {
     handleSubmit();
+    // eslint-disable-next-line
   }, []);
 
   const handleSubmit = async () => {
