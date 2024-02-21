@@ -25,9 +25,16 @@ const getRandomMealProduct = async () => {
   return await responce.json();
 };
 
+// search meal by name
+const searchAllMealByName = async (nameMeal) => {
+  const responce = await fetch(API_URL + 'search.php?s=' + nameMeal);
+  return await responce.json();
+};
+
 export {
   getMealById,
   getAllCatalog,
   getAllMealsByCatalog,
   getRandomMealProduct,
+  searchAllMealByName,
 };

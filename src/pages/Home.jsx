@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react';
-import { useAsyncError, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Preloader from '../component/Preloader';
 import CategoryList from '../component/CategoryList';
 import Search from '../component/Search';

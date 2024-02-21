@@ -6,6 +6,7 @@ const initialState = {
   loading: true,
   mealsByCatalog: [],
   filteredCatalog: [],
+  findProductBySearch: [],
   recipe: {},
 };
 
@@ -26,6 +27,10 @@ export const ContextProvider = ({ children }) => {
 
   value.setRandomProduct = (mealRandomId) => {
     dispatch({ type: 'SET_RANDOM_PRODUCT', payload: mealRandomId });
+  };
+
+  value.searchMealByName = (mealName) => {
+    dispatch({ type: 'SEARCH_PRODUCT', payload: mealName });
   };
 
   return <FoodContext.Provider value={value}>{children}</FoodContext.Provider>;

@@ -17,6 +17,9 @@ function Header() {
           <li>
             <Link to="/random">Random Product</Link>
           </li>
+          <li>
+            <Link to="/search">Search Product</Link>
+          </li>
         </ul>
       </div>
     </nav>

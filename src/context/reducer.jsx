@@ -1,4 +1,5 @@
 export function reducer(state, { type, payload }) {
+  // console.log(payload);
   switch (type) {
     case 'SET_FILTERED_CATALOG':
       return {
@@ -22,6 +23,12 @@ export function reducer(state, { type, payload }) {
       return {
         ...state,
         recipe: payload,
+        loading: false,
+      };
+    case 'SEARCH_PRODUCT':
+      return {
+        ...state,
+        findProductBySearch: payload,
         loading: false,
       };
     default:

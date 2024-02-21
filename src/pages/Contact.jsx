@@ -7,7 +7,7 @@ function Contact() {
       </p>
       <p>
         Телеграмм:{' '}
-        <a href="https://t.me/vitaliygalata" target="_blank">
+        <a href="https://t.me/vitaliygalata" target="_blank" rel="noreferrer">
           vitaliygalata
         </a>
       </p>

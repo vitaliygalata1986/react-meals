@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Recipe from './pages/Recipe';
 import Category from './pages/Category';
 import Random from './pages/Random';
+import Search from './pages/Search';
 import NotFound from './pages/NotFound';
 import './index.css';
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter(
           element: <Random />,
         },
         {
+          path: '/search',
+          element: <Search />,
+        },
+        {
           path: '/category/:name',
           element: <Category />,
         },
@@ -50,7 +55,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/react-food',
+    // basename: '/react-food',
   }
 );
 
