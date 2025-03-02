@@ -55,7 +55,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/react-meals/',
+    // basename: '/react-meals/',
   }
 );
 

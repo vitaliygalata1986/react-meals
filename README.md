@@ -1,3 +1,33 @@
-<div>React Food Portfolio Project - used Context.API + useReducer</div>
-<div>API: <a target="_blank" href="https://www.themealdb.com/api.php">https://www.themealdb.com/api.php</a></div>
-<a href="https://vitaliygalata1986.github.io/react-meals/" target="_blank">Visit my site</a>
+# React Food Portfolio Project
+
+### API Used
+
+[THEMEALDB] https://www.themealdb.com/api.php
+
+## 🛠 Technology Stack
+
+This project is built using:
+
+1. **React**
+2. **React Contex API**
+3. **React Router DOM**
+4. **Materialize**
+
+## 🔧 Installation and launch
+
+1. Install dependencies:
+
+   ```sh
+   npm install
+
+   ```
+
+2. Run the project in development mode:
+
+   ```sh
+   npm run start
+
+   ```
+
+3. Live demo:  
+   <a target="_blank" href="https://vitaliygalata1986.github.io/react-meals/">Live demo</a>

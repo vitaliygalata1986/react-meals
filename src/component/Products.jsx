@@ -4,6 +4,7 @@ import Product from './Product';
 
 function Products() {
   const { findProductBySearch } = useContext(FoodContext);
+  console.log(findProductBySearch);
   if (!findProductBySearch.length) {
     return <h3>No products found</h3>;
   }
