@@ -12,6 +12,7 @@ This project is built using:
 2. **React Contex API**
 3. **React Router DOM**
 4. **Materialize**
+5. **GitHub pages**
 
 ## 🔧 Installation and launch
 
